@@ -17,7 +17,7 @@ export default function NextImage({ src, alt, className, ...props }: NextImagePr
   return (
     <figure
       className={cn(
-        'relative flex h-full w-full items-center justify-center rounded-t-md bg-orange-200',
+        'relative flex h-full w-full items-center justify-center rounded-t-md',
         loaded && 'animate-pulse bg-slate-700'
       )}
     >

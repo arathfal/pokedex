@@ -3,9 +3,10 @@ import { FC, useEffect, useMemo, useState } from 'react'
 
 import { usePathname, useRouter } from 'next/navigation'
 
-import store from '@/store'
+import store, { ContextValue } from '@/store'
 import { CommonProps } from '@/types/common'
-import { FilterType, SortType } from '@/types/filter'
+import { SortType } from '@/types/filter'
+import { PokemonDetailType } from '@/types/pokemon'
 
 const { Provider: StoreProvider } = store
 
@@ -14,20 +15,27 @@ const Provider: FC<CommonProps> = ({ children }) => {
   const pathname = usePathname()
   const [sort, setSort] = useState<SortType>('default')
   const [name, setName] = useState<string>('')
+  const [selected, setSelected] = useState<PokemonDetailType[]>([])
 
   useEffect(() => {
-    router.replace(`${pathname}?page=${1}`)
+    if (pathname === '/') router.replace(`${pathname}?page=${1}`)
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
-  const value: FilterType = useMemo(() => {
+  const value: ContextValue = useMemo(() => {
     return {
-      sort,
-      setSort,
-      name,
-      setName
+      filter: {
+        sort,
+        setSort,
+        name,
+        setName
+      },
+      comparison: {
+        selected,
+        setSelected
+      }
     }
-  }, [sort, name])
+  }, [sort, name, selected])
 
   return <StoreProvider value={value}>{children}</StoreProvider>
 }

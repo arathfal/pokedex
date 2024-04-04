@@ -2,10 +2,12 @@
 
 import { ChangeEventHandler, useCallback } from 'react'
 
-import useFilter from '@/hooks/useFilter'
+import usePokemons from '@/hooks/usePokemons'
 
 const SearchInput = () => {
-  const { name, setName } = useFilter()
+  const {
+    filter: { name, setName }
+  } = usePokemons()
 
   const handleChange: ChangeEventHandler<HTMLInputElement> = useCallback(
     (e) => {

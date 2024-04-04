@@ -1,6 +1,6 @@
-import { PokemonDataType } from '@/types/pokemon'
+import { PokemonResponseDataType } from '@/types/pokemon'
 
-export default async function getPokemons(page = 1): Promise<PokemonDataType> {
+export default async function getPokemons(page = 1): Promise<PokemonResponseDataType> {
   const LIMIT = 12
   const offset = (page - 1) * LIMIT
   const res = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=${LIMIT}&offset=${offset}`)
