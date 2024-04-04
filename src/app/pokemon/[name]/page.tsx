@@ -21,7 +21,7 @@ export default async function PokemonDetail({ params }: PokemonDetailProps) {
         <span>Home</span>
       </Link>
       <div className="container mx-auto gap-8 px-5 py-16 md:flex">
-        <div className="relative h-[340px] w-full bg-orange-200  md:w-5/12">
+        <div className="relative mb-8 h-[340px] w-full bg-orange-200 md:mb-0 md:w-5/12">
           <NextImage
             src={pokemon?.image}
             className="object-contain"
@@ -39,19 +39,19 @@ export default async function PokemonDetail({ params }: PokemonDetailProps) {
                 <strong>General Info:</strong>
               </h2>
               <div className="flex w-full">
-                <p className="w-10/12 md:w-6/12">Height:</p>
-                <p>{pokemon?.height} kg</p>
+                <p className="w-6/12 md:w-5/12">Height:</p>
+                <p>{pokemon?.height} m</p>
               </div>
               <div className="flex w-full">
-                <p className="w-10/12 md:w-6/12">Weight:</p>
+                <p className="w-6/12 md:w-5/12">Weight:</p>
                 <p>{pokemon?.weight} kg</p>
               </div>
               <div className="flex w-full">
-                <p className="w-10/12 md:w-6/12">Types:</p>
+                <p className="w-6/12 md:w-5/12">Types:</p>
                 <p>{pokemon?.types?.join(', ')}</p>
               </div>
               <div className="flex w-full">
-                <p className="w-10/12 md:w-6/12">Abilities:</p>
+                <p className="w-6/12 md:w-5/12">Abilities:</p>
                 <p>{pokemon?.abilities?.join(', ')}</p>
               </div>
             </div>
@@ -61,27 +61,27 @@ export default async function PokemonDetail({ params }: PokemonDetailProps) {
                 <strong>Stats:</strong>
               </h2>
               <div className="flex w-full">
-                <p className="w-10/12 md:w-6/12">Hp:</p>
+                <p className="w-6/12 md:w-5/12">Hp:</p>
                 <p>{pokemon?.stats?.hp}</p>
               </div>
               <div className="flex w-full">
-                <p className="w-10/12 md:w-6/12">Attack:</p>
+                <p className="w-6/12 md:w-5/12">Attack:</p>
                 <p>{pokemon?.stats?.attack}</p>
               </div>
               <div className="flex w-full">
-                <p className="w-10/12 md:w-6/12">Defense:</p>
+                <p className="w-6/12 md:w-5/12">Defense:</p>
                 <p>{pokemon?.stats?.defense}</p>
               </div>
               <div className="flex w-full">
-                <p className="w-10/12 md:w-6/12">Special Attack:</p>
+                <p className="w-6/12 md:w-5/12">Special Attack:</p>
                 <p>{pokemon?.stats?.['special-attack']}</p>
               </div>
               <div className="flex w-full">
-                <p className="w-10/12 md:w-6/12">Special Attack:</p>
+                <p className="w-6/12 md:w-5/12">Special Attack:</p>
                 <p>{pokemon?.stats?.['special-defense']}</p>
               </div>
               <div className="flex w-full">
-                <p className="w-10/12 md:w-6/12">Speed:</p>
+                <p className="w-6/12 md:w-5/12">Speed:</p>
                 <p>{pokemon?.stats?.speed}</p>
               </div>
             </div>
